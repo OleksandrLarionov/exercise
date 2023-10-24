@@ -15,8 +15,8 @@ const AllTheBooks = () => {
 			<Row>
 				{horror.map((book) => {
 					return (
-						<Col md={2}>
-							<Card key={book.asin}>
+						<Col md={2} key={book.asin}>
+							<Card>
 								<Card.Img variant='top' src={book.img} />
 								<Card.Body>
 									<Card.Title>{book.title}</Card.Title>
