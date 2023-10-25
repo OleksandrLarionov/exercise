@@ -9,7 +9,7 @@ import fantasy from '../data/fantasy.json';
 
 // const found = fantasy.filter.includes('T');
 
-console.log('trovato:', found);
+// console.log('trovato:', found);
 class AllTheBooks extends Component {
 	state = {
 		genre: {
