@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card';
 import { Container } from 'react-bootstrap';
 import { Component } from 'react';
 // Genere dei libri
-import fantasy from '../data/fantasy.json';
 
 // const found = fantasy.filter.includes('T');
 
