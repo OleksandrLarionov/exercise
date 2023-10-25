@@ -1,4 +1,4 @@
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Form } from 'react-bootstrap';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -6,35 +6,41 @@ import { Container } from 'react-bootstrap';
 import { Component } from 'react';
 // Genere dei libri
 import fantasy from '../data/fantasy.json';
-import history from '../data/history.json';
-import horror from '../data/horror.json';
-import romance from '../data/romance.json';
-import scifi from '../data/scifi.json';
 
+// const found = fantasy.filter.includes('T');
+
+console.log('trovato:', found);
 class AllTheBooks extends Component {
 	state = {
-		genreFantasy: fantasy[0],
-		genreHistory: history[0],
-		genreRomance: romance[0],
-		genreHorror: horror[0],
-		genreScifi: scifi[0],
+		genre: {
+			bookName: '',
+		},
 	};
-
+	handleImputChange = (property, value) => {
+		this.setState({
+			genre: {
+				...this.state.genre,
+				[property]: value,
+			},
+		});
+	};
 	render() {
 		return (
 			<Container>
-				<button
-					onClick={(e) => {
-						console.log('yo', e.button);
-
-						this.setState({
-							genreFantasy: fantasy[e.button],
-						});
-					}}>
-					Fantasy
-				</button>
+				<Form>
+					<Form.Group className='mb-3'>
+						<Form.Label>Cerca qui il tuo libro Preferito</Form.Label>
+						<Form.Control
+							type='text'
+							placeholder='Il nome del ibro'
+							value={this.state.genre.bookName}
+							onChange={(e) => this.handleImputChange('bookName', e.target.value)}
+						/>
+					</Form.Group>
+				</Form>
 				<Row>
-					{horror.map((book) => {
+					{/* qui vado a inserire il genere */}
+					{this.props.setGenre.map((book) => {
 						return (
 							<Col md={3} key={book.asin}>
 								<Card className='h-100'>

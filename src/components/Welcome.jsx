@@ -1,8 +1,14 @@
+import Alert from 'react-bootstrap/Alert';
+
 const Welcome = () => {
-	alert('Welcome');
+	// alert('Welcome');
 	return (
-		<div className='text-center'>
-			<h2>Benvenuto nella mia pagina</h2>
+		<div>
+			<Alert
+				variant='success'
+				className='text-center fw-bold fs-2 text-white border border-dark'>
+				Welcome To My Book Page!
+			</Alert>
 		</div>
 	);
 };
